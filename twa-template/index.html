@@ -15,6 +15,12 @@
   </body>
   <script>
     console.log(window.Telegram.WebApp,'Telegram.WebApp')
-    window.Telegram.WebApp.expand();
+    const tg = window.Telegram.WebApp;
+    // 先初始化, 再全屏设置
+    tg.ready();
+    tg.expand();
+    // 关闭时二次确认
+    tg.isClosingConfirmationEnabled = true;
+
   </script>
 </html>
